@@ -59,13 +59,15 @@ router.post("/", function (req, res) {
 });
 
 router.get('/:comment_id/edit', function (req, res) {
-    Campground.findById(req.params.id, function (err, campground_id) {
-        if (err) {
-            console.log(err);
-        } else {
-            es.render("comments/edit", { campground: campground_id });
-        }
-    });
+    res.send('Works!');
+
+    // Campground.findById(req.params.id, function (err, campground_id) {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    //         es.render("comments/edit", { campground: campground_id });
+    //     }
+    // });
 });
 
 
