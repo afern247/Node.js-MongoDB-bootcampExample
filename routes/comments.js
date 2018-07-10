@@ -59,8 +59,15 @@ router.post("/", function (req, res) {
 });
 
 router.get('/:comment_id/edit', function (req, res) {
-    res.send('test');
+    Campground.findById(req.params.id, function (err, campground_id) {
+        if (err) {
+            console.log(err);
+        } else {
+            es.render("comments/edit", { campground: campground_id });
+        }
+    });
 });
+
 
 //middleware
 function isLoggedIn(req, res, next) {
