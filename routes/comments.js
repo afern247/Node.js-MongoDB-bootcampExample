@@ -58,7 +58,9 @@ router.post("/", function (req, res) {
     //redirect campground show page
 });
 
-
+router.get('/:comment_id/edit', function (req, res) {
+    res.send('test');
+});
 
 //middleware
 function isLoggedIn(req, res, next) {
@@ -67,7 +69,5 @@ function isLoggedIn(req, res, next) {
     }
     res.redirect("/login");
 }
-
-
 
 module.exports = router;

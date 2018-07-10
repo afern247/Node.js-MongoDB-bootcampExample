@@ -106,8 +106,6 @@ function isLoggedIn(req, res, next) {
     res.redirect("/login");
 }
 
-
-
 //middleware
 function checkCampgroundOwnership(req, res, next) {
     if (req.isAuthenticated()) {
