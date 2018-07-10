@@ -13,8 +13,3 @@
 .caption {
     padding: 9px;
 }
-
-#delete-form{
-    display: inline;
-    text-decoration: line-through;
-}

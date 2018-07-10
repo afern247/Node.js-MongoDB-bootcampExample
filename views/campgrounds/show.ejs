@@ -22,13 +22,10 @@
                     <p><em>Submited by <%= campground.author.username %></em></p>
                         <div class="ui right aligned grid">
                           <div class="sixteen wide column">
-                              <div class="mini ui buttons">
-                                    <a class="ui green basic button" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-                                    <a class="ui blue basic button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-                                    <!-- Since forms occupy one whole row, we have to put them in-line manually, that's the delete-form for -->
-                                    <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" >
-                                       <button class="ui red basic button">Delete</button>
-                                    </form>
+                              <div class="ui buttons">
+                                    <button class="ui green basic button">Add New Comment</button>
+                                    <button class="ui blue basic button">Edit</button>
+                                    <button class="ui red basic button">Delete</button>
                                 </div>
                             </div>
                         </div>
