@@ -20,21 +20,19 @@
                     <h4><a><%=campground.name%></a></h4>
                     <p><%= campground.description %></p>
                     <p><em>Submited by <%= campground.author.username %></em></p>
-                        <div class="ui right aligned grid">
-                          <div class="sixteen wide column">
-                              <div class="mini ui buttons">
-                                    <a class="ui green basic button" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-                                    <a class="ui blue basic button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-                                    <!-- Since forms occupy one whole row, we have to put them in-line manually, that's the delete-form for -->
-                                    <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" >
-                                       <button class="ui red basic button">Delete</button>
-                                    </form>
-                                </div>
+                    <div class="ui right aligned grid">
+                        <div class="sixteen wide column">
+                            <div class="ui buttons">
+                                <a class="ui green basic button" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+                                <a class="ui blue basic button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+                                <input type="submit" value="Delete" form="delete-form" class="ui red basic button">
+                                <!-- Since forms occupy one whole row, we have to put them in-line manually, that's the delete-form for -->
                             </div>
+                            <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" ></form>
                         </div>
+                    </div>
                 </div>
             <div class="card card-body bg-light">
-
                  <div class="ui horizontal divider">
                     <em>< ></em>
                  </div>
@@ -43,9 +41,7 @@
                         <div class="col-md-12">
                             <strong><%= comment.author.username %></strong>
                             <span class="float-right">10 days ago</span>
-                            <p>
-                                <%= comment.text %>
-                            </p>
+                            <p><%= comment.text %></p>
                         </div>
                     </div>
                 <% }) %>
