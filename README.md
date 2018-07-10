@@ -5,5 +5,4 @@
 
 <p align="center">
 <<.. Description comes later ..>>
-
 </p>
