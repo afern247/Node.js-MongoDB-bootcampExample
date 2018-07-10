@@ -1,2 +1,3 @@
-# web_bootcamp
-Campground bootcamp.
+# Campground Website
+
+Description comes later...
