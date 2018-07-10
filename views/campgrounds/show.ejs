@@ -24,9 +24,13 @@
                         <div class="sixteen wide column">
                             <div class="ui buttons">
                                 <a class="ui green basic button" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+                                <!-- Does the user owns the post? If yes, he'll see edit and delete -->
+                                <!-- We have to use equals because campground.author.id is a mongo object and urrentUser._id is a string so u can't do === -->
+                                <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
                                 <a class="ui blue basic button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
                                 <input type="submit" value="Delete" form="delete-form" class="ui red basic button">
                                 <!-- Since forms occupy one whole row, we have to put them in-line manually, that's the delete-form for -->
+                                <% } %>
                             </div>
                             <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" ></form>
                         </div>
