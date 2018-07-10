@@ -24,11 +24,6 @@ var data = [{
         name: "Around the fire",
         image: "https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=14704e761ba133f2fb71ec6a8e6e8e07&auto=format&fit=crop&w=750&q=80",
         description: "Sed vitae lacus congue, porta libero et, iaculis odio. Proin euismod elit sem, vel gravida sem commodo eu. Vestibulum sed dolor nec risus maximus tincidunt eu eu nisl. Nam in facilisis erat. Fusce vel urna purus. Praesent tincidunt mi ac vulputate porttitor. Nunc ultrices, risus quis placerat tincidunt, urna magna pulvinar ex, eu dictum nisl nulla vel ligula. Integer a venenatis diam."
-    },
-    {
-        name: "Ice montains",
-        image: "https://cdn.pixabay.com/photo/2018/05/16/15/49/camper-3406137_960_720.jpgs=14704e761ba133f2fb71ec6a8e6e8e07&auto=format&fit=crop&w=750&q=80",
-        description: "Sed vitae lacus congue, porta libero et, iaculis odio. Proin euismod elit sem, vel gravida sem commodo eu. Vestibulum sed dolor nec risus maximus tincidunt eu eu nisl. Nam in facilisis erat. Fusce vel urna purus. Praesent tincidunt mi ac vulputate porttitor. Nunc ultrices, risus quis placerat tincidunt, urna magna pulvinar ex, eu dictum nisl nulla vel ligula. Integer a venenatis diam."
     }
 ]
 
