@@ -1,0 +1,20 @@
+.stretchIMG {
+    width: 100%;
+}
+
+.img-thumbnail {
+    padding: 0px;
+}
+
+.card-body {
+    margin-top: 10px;
+}
+
+.caption {
+    padding: 9px;
+}
+
+#delete-form{
+    display: inline;
+    text-decoration: line-through;
+}
