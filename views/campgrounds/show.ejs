@@ -56,11 +56,11 @@
                                 <div class="sixteen wide column">
                                     <div class="ui buttons">
                                         <a id="small-button" class="ui blue basic button" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit">Edit</a>
-                                        <input form="delete-coments-form" type="submit" id="small-button" class="ui red basic button" value="Delete">
+                                        <input form="delete-coments-form-<%= comment._id %>" type="submit" id="small-button" class="ui red basic button" value="Delete">
                                     </div>
                                 </div>
                             </div>
-                            <form id="delete-coments-form" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST"></form>
+                            <form id="delete-coments-form-<%= comment._id %>" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST"></form>
                         <% } %>
 
                     </div>
