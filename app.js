@@ -88,13 +88,11 @@ app.use('/campgrounds/:id/comments', commentRoutes);
 
 
 
-/*
+
 //The 404 Route (ALWAYS Keep this as the last route)
-router.get('*', function (req, res) {
+app.get('*', function (req, res) {
     res.render('404');
 });
-
-*/
 
 
 // port to listen
