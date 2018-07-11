@@ -20,16 +20,15 @@ router.get('/register', function (req, res) {
 router.post('/register', function (req, res) {
     var newUser = new User({ username: req.body.username  });
     if (req.body.adminCode === 'secret') {
-        newUser.isAdmin = true; 
+        newUser.isAdmin = true;
     }
     User.register(newUser, req.body.password, function (err, user) {
-        if (err) {
-            console.log(err);
-            return res.render('register');
-        }
-        req.flash('success', 'Account created.');
+                if (err) {
+                    return res.render("register", {error: err.message});
+                }
         passport.authenticate('local')(req, res, function () {
-            res.redirect('/campgrounds');
+        req.flash('success', 'Account created. Welcome to YelpCamp ' + user.username);
+        res.redirect('/campgrounds');
         });
     });
 });
