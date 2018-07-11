@@ -14,9 +14,6 @@
     <a class="navbar-brand" href="/campgrounds">YelpCamp</a>
     <div class="collapse navbar-collapse">
 
-
-
-
     <ul class="nav navbar-nav ml-auto">
         <% if(!currentUser){ %>
             <li class = "nav-item">
@@ -34,15 +31,29 @@
             </li>
         <% } %>
     </ul>
-
-
-
-
-
-
     </div>
 </nav>
 
+
+
+    <div class="container">
+        <% if (success && success.length > 0){ %>   <!-- having error alone is not enough so we have to check that error is not empty becasue error by itself will be there -->
+            <div class="ui success message">
+                <div class="header"><%= success %></div>
+            </div>
+        <% } %>
+    </div>
+
+
+
+
+<div class="container">
+        <% if (error && error.length > 0){ %>   <!-- having success alone is not enough so we have to check that success is not empty becasue success by itself will be there -->
+            <div class="ui negative message">
+        <div class="header"><%= error %></div>
+    </div>
+     <% } %>
+</div>
 
 
 

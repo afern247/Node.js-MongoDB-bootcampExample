@@ -47,7 +47,8 @@ middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    req.flash('success', 'Please log in first!');   // this doesn't show anything, this is a way to access the message, we can show it in //show login form in index.js inside routes
+    // this doesn't show anything, this is a way to access the message, we can show it in //show login form in index.js inside routes
+    req.flash('error', 'Please log in first!'); // error is the id that we'll reference to, and once we call it, it'll say: Please log in first!
     res.redirect("/login");
 }
 

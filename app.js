@@ -73,6 +73,8 @@ passport.deserializeUser(User.deserializeUser()); // Needed to encrypt/decript t
 app.use(function (req, res, next) { // needs to go below the initializations of passport or won't work
     // pass the request to every template
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash('error'); // if there is anything in the flash we'll have access under error
+    res.locals.success = req.flash('success');    // login green flash message
     next(); // if we don't have this, it'll stop, so it won't do the next action
 });
 

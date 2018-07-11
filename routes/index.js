@@ -34,7 +34,7 @@ router.post('/register', function (req, res) {
 
 //show login form
 router.get('/login', function (req, res) {
-    res.render('login', {message:'ERROR!'});
+    res.render('login');
 });
 
 // handle login logic
@@ -48,6 +48,7 @@ router.post('/login', passport.authenticate("local", {
 // log out route
 router.get("/logout", function (req, res) {
     req.logout();
+    req.flash('success', 'Logged out succesfully');
     res.redirect("/campgrounds");
 });
 
