@@ -24,12 +24,14 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
     var newName = req.body.name;
     var newImage = req.body.image;
     var newDescription = req.body.description;
+    var price =req.body.price;
     var newAuthor = {
         id: req.user._id,
         username: req.user.username
     }
     var newCampground = {   // Store all the new campground info in that var so we can submit it later to DB
         name: newName,
+        price: price,
         image: newImage,
         description: newDescription,
         author: newAuthor
