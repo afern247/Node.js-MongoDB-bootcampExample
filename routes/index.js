@@ -26,6 +26,7 @@ router.post('/register', function (req, res) {
             console.log(err);
             return res.render('register');
         }
+        req.flash('success', 'Account created.');
         passport.authenticate('local')(req, res, function () {
             res.redirect('/campgrounds');
         });
