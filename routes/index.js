@@ -63,13 +63,4 @@ function isLoggedIn(req, res, next) {
     res.redirect("/login");
 }
 
-
-/*
-//The 404 Route (ALWAYS Keep this as the last route)
-router.get('*', function (req, res) {
-    res.render('404');
-});
-
-*/
-
 module.exports = router;

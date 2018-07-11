@@ -86,6 +86,17 @@ app.use('/', indexRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 
+
+
+/*
+//The 404 Route (ALWAYS Keep this as the last route)
+router.get('*', function (req, res) {
+    res.render('404');
+});
+
+*/
+
+
 // port to listen
 app.listen(3000, () => {
     console.log('Listening on port: ' + chalk.green(3000));
