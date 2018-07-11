@@ -18,3 +18,8 @@
     display: inline;
     text-decoration: line-through;
 }
+
+#small-button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:9px;
+}

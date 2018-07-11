@@ -20,36 +20,52 @@
                     <h4><a><%=campground.name%></a></h4>
                     <p><%= campground.description %></p>
                     <p><em>Submited by <%= campground.author.username %></em></p>
-                    <div class="ui right aligned grid">
-                        <div class="sixteen wide column">
-                            <div class="ui buttons">
-                                <a class="ui green basic button" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-                                <!-- Does the user owns the post? If yes, he'll see edit and delete -->
-                                <!-- We have to use equals because campground.author.id is a mongo object and urrentUser._id is a string so u can't do === -->
-                                <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-                                <a class="ui blue basic button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-                                <input type="submit" value="Delete" form="delete-form" class="ui red basic button">
-                                <!-- Since forms occupy one whole row, we have to put them in-line manually, that's the delete-form for -->
-                                <% } %>
+                        <div class="ui right aligned grid">
+                            <div class="sixteen wide column">
+                                <div class="ui buttons">
+                                    <a class="ui green basic button" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+                                    <!-- Does the user owns the post? If yes, he'll see edit and delete -->
+                                    <!-- We have to use equals because campground.author.id is a mongo object and urrentUser._id is a string so u can't do === -->
+                                    <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                                    <a class="ui blue basic button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+                                    <input type="submit" value="Delete" form="delete-form" class="ui red basic button">
+                                    <!-- Since forms occupy one whole row, we have to put them in-line manually, that's the delete-form for -->
+                                    <% } %>
+                                </div>
+                                <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" ></form>
                             </div>
-                            <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" ></form>
                         </div>
-                    </div>
                 </div>
             <div class="card card-body bg-light">
                  <div class="ui horizontal divider">
                     <em>< ></em>
                  </div>
-                <% campground.comments.forEach(function(comment){ %>
+
+                 <% campground.comments.forEach(function(comment){ %>
                     <div class="row">
                         <div class="col-md-12">
                             <strong><%= comment.author.username %></strong>
                             <span class="float-right">10 days ago</span>
                             <p><%= comment.text %></p>
                         </div>
-                        <a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
+
+                        <!-- EDIT/DELETE Comments -->
+                        <!-- currentUser comes from app.js, we defined it globaly-->
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                             <div class="ui right aligned grid">
+                                <div class="sixteen wide column">
+                                    <div class="ui buttons">
+                                        <a id="small-button" class="ui blue basic button" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                                        <input form="delete-coments-form" type="submit" id="small-button" class="ui red basic button" value="Delete">
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="delete-coments-form" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST"></form>
+                        <% } %>
+
                     </div>
                 <% }) %>
+
             </div>
         </div>
     </div>

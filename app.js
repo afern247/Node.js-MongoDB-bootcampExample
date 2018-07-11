@@ -6,6 +6,7 @@ var express             = require('express'),
     passport            = require('passport'),
     LocalStrategy       = require('passport-local'),
     chalk               = require('chalk'), // Colors in console
+    flash               = require('connect-flash'), // https://github.com/jaredhanson/connect-flash
     methodOverride      = require('method-override'),
     Campground          = require('./models/campground'),
     Comment             = require('./models/comment'),
@@ -47,6 +48,7 @@ app.use(express.static(__dirname + '/public/images/'));
 app.use(express.static(__dirname + '/public/javascripts/'));
 app.use(methodOverride('_method')); // we use and tell methodOverride what to look for
 app.set('view engine', 'ejs');
+app.use(flash());
 
 // ERROR DRIVEN DEVELOPMENT
 // Create new data manually in DB => seedDB();
